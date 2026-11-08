@@ -6,3 +6,4 @@ secrets.*
 .s
 .venv/
 .vault
+data.json

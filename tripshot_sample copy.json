@@ -1,0 +1,869 @@
+{
+  "InternalRouteLiveData": {
+    "sharedRouteId": "50c3516c-493b-4b50-b954-bf7e48533647",
+    "exactLiveData": [
+      {
+        "direction": "Inbound",
+        "directionName": null,
+        "liveTrips": [
+          {
+            "sharedTripId": "199ad38f-e4e1-45e7-9eef-197b15351327",
+            "state": {
+              "Active": []
+            },
+            "riderCount": 14,
+            "userRiderCount": 14,
+            "bikeCount": 0
+          }
+        ],
+        "liveRides": [
+          {
+            "vehicle": {
+              "visibility": "PublicRider",
+              "vehicleId": "94a0cea7-70f6-42c3-80dc-82423b0cda9f",
+              "vehicleCode": 35304,
+              "name": "501",
+              "gtfsName": null,
+              "capacity": 35,
+              "bicycleCapacity": 2,
+              "wifiAvailable": false,
+              "deviceId": "287142",
+              "shortName": "501",
+              "vendorId": "1c59ec96-e835-402e-8263-6b905e39ee52",
+              "deleted": false,
+              "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+              "vehicleType": "bus",
+              "wheelchairCapacity": 2,
+              "seatsPerWheelchair": 0,
+              "infantSeatCapacity": 0,
+              "toddlerSeatCapacity": 0,
+              "safeDistancing": false
+            },
+            "vehicleStatus": {
+              "visibility": "PublicRider",
+              "vehicleId": "94a0cea7-70f6-42c3-80dc-82423b0cda9f",
+              "name": "501",
+              "gtfsName": null,
+              "location": {
+                "lt": 43.0794418,
+                "lg": -77.6249732
+              },
+              "accuracy": 1.02,
+              "when": "2026-11-08T01:11:35.877Z",
+              "bearing": 38,
+              "speed": 10.5199995,
+              "liveDataAvailable": true,
+              "vestigeViewLiveFeed": null,
+              "apcOccupancy": 33,
+              "rawOccupancy": null
+            },
+            "ride": {
+              "stopStatus": [
+                {
+                  "Departed": {
+                    "arrivalTime": "2026-11-08T00:59:39.877Z",
+                    "byRequest": "av",
+                    "departureTime": "2026-11-08T01:00:39.877Z",
+                    "expectedArrivalTime": "2026-11-08T01:00:00.000Z",
+                    "scheduledAt": "20:00:00",
+                    "scheduledDepartureTime": "2026-11-08T01:00:00.000Z",
+                    "stopId": "ddd82364-79fa-4125-80d2-b0e4778a5a88",
+                    "timepoint": true,
+                    "viaIdx": 0,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Departed": {
+                    "arrivalTime": "2026-11-08T01:02:33.877Z",
+                    "byRequest": "av",
+                    "departureTime": "2026-11-08T01:03:38.878Z",
+                    "expectedArrivalTime": "2026-11-08T01:04:00.000Z",
+                    "scheduledAt": "20:04:00",
+                    "scheduledDepartureTime": "2026-11-08T01:04:00.000Z",
+                    "stopId": "dc3a2d42-84db-4cf3-8a73-6170dc9b9aac",
+                    "timepoint": true,
+                    "viaIdx": 1,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Departed": {
+                    "arrivalTime": "2026-11-08T01:09:13.876Z",
+                    "byRequest": "av",
+                    "departureTime": "2026-11-08T01:09:56.876Z",
+                    "expectedArrivalTime": "2026-11-08T01:09:00.000Z",
+                    "scheduledAt": "20:09:00",
+                    "scheduledDepartureTime": "2026-11-08T01:09:00.000Z",
+                    "stopId": "35598f9e-f983-4723-a53c-a98577177c30",
+                    "timepoint": true,
+                    "viaIdx": 4,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:14:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:14:00",
+                    "scheduledDepartureTime": "2026-11-08T01:14:00.000Z",
+                    "stopId": "e755e4d5-8735-426e-905a-176e4172c49e",
+                    "timepoint": true,
+                    "viaIdx": 6,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:17:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:17:00",
+                    "scheduledDepartureTime": "2026-11-08T01:17:00.000Z",
+                    "stopId": "effae39c-3dc0-47b6-a9f7-56e268ea50a2",
+                    "timepoint": true,
+                    "viaIdx": 8,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:22:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:22:00",
+                    "scheduledDepartureTime": "2026-11-08T01:22:00.000Z",
+                    "stopId": "4cd61c4a-24a1-489f-98b4-a74b528b2e5e",
+                    "timepoint": true,
+                    "viaIdx": 9,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:26:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:26:00",
+                    "scheduledDepartureTime": "2026-11-08T01:26:00.000Z",
+                    "stopId": "92e613ea-5582-4dac-8de4-abfa99b6d82d",
+                    "timepoint": true,
+                    "viaIdx": 10,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:33:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:33:00",
+                    "scheduledDepartureTime": "2026-11-08T01:33:00.000Z",
+                    "stopId": "61d92387-054d-4cbd-bb8c-af8476c8f429",
+                    "timepoint": true,
+                    "viaIdx": 13,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:37:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:37:00",
+                    "scheduledDepartureTime": "2026-11-08T01:37:00.000Z",
+                    "stopId": "bcc81237-9db0-49c5-b9dd-c0d1fcc5362e",
+                    "timepoint": true,
+                    "viaIdx": 14,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:47:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:47:00",
+                    "scheduledDepartureTime": "2026-11-08T01:47:00.000Z",
+                    "stopId": "b0b777f0-3f31-4b86-bacc-9a482b3d6f98",
+                    "timepoint": true,
+                    "viaIdx": 15,
+                    "visitType": "DropOffOrPickup"
+                  }
+                },
+                {
+                  "Awaiting": {
+                    "byRequest": "av",
+                    "expectedArrivalTime": "2026-11-08T01:50:00.000Z",
+                    "riderStatus": "OnTime",
+                    "scheduledAt": "20:50:00",
+                    "scheduledDepartureTime": "2026-11-08T01:50:00.000Z",
+                    "stopId": "1f6ea270-4bdc-4971-b0d5-83226aa29e20",
+                    "timepoint": true,
+                    "viaIdx": 17,
+                    "visitType": "DropOffOnly"
+                  }
+                }
+              ],
+              "rideId": "199ad38f-e4e1-45e7-9eef-197b15351327:2026-11-07",
+              "routeId": "50c3516c-493b-4b50-b954-bf7e48533647",
+              "routeServiceId": "9619e4da-d290-4fac-97b1-c74be50a3faf",
+              "headwayDefinedTripId": null,
+              "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+              "acceptingDeviceId": "287142",
+              "shiftId": "9f6ccc47-a498-406f-abf8-d8e6cddf5093",
+              "vehicleId": "94a0cea7-70f6-42c3-80dc-82423b0cda9f",
+              "driverId": "59133fa2-8281-4ac5-ba51-18da8d3065f6",
+              "state": {
+                "Active": []
+              },
+              "rideHistory": [
+                {
+                  "StateChange": {
+                    "when": "2026-11-08T00:50:05.434Z",
+                    "state": {
+                      "Active": []
+                    }
+                  }
+                },
+                {
+                  "StateChange": {
+                    "when": "2026-11-07T20:43:43.746Z",
+                    "state": {
+                      "Accepted": []
+                    }
+                  }
+                },
+                {
+                  "StateChange": {
+                    "when": "2026-11-07T11:12:32.191Z",
+                    "state": {
+                      "Scheduled": []
+                    }
+                  }
+                }
+              ],
+              "fullRideHistory": [
+                {
+                  "StateChange": {
+                    "when": "2026-11-08T00:50:05.434Z",
+                    "state": {
+                      "Active": []
+                    },
+                    "principalId": ""
+                  }
+                },
+                {
+                  "StateChange": {
+                    "when": "2026-11-07T20:43:43.746Z",
+                    "state": {
+                      "Accepted": []
+                    },
+                    "principalId": "D:287142"
+                  }
+                },
+                {
+                  "StateChange": {
+                    "when": "2026-11-07T11:12:32.191Z",
+                    "state": {
+                      "Scheduled": []
+                    },
+                    "principalId": "U:9cfaf48c-34a3-4cda-86c6-121b817e54c4"
+                  }
+                }
+              ],
+              "vias": [
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "ddd82364-79fa-4125-80d2-b0e4778a5a88",
+                      "location": {
+                        "lt": 43.089704,
+                        "lg": -77.643107
+                      },
+                      "name": "South Town Plaza",
+                      "address": {
+                        "address": "43.089704, -77.643107",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "dc3a2d42-84db-4cf3-8a73-6170dc9b9aac",
+                      "location": {
+                        "lt": 43.083213,
+                        "lg": -77.629825
+                      },
+                      "name": "Hylan Hub West",
+                      "address": {
+                        "address": "43.083213, -77.629825",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.082940023931656,
+                      "lg": -77.630640481959
+                    }
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.07931576950564,
+                      "lg": -77.63246036398176
+                    }
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "35598f9e-f983-4723-a53c-a98577177c30",
+                      "location": {
+                        "lt": 43.07808,
+                        "lg": -77.631834
+                      },
+                      "name": "Target",
+                      "address": {
+                        "address": "43.078080, -77.631834",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.07702524771792,
+                      "lg": -77.63072898732624
+                    }
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "e755e4d5-8735-426e-905a-176e4172c49e",
+                      "location": {
+                        "lt": 43.0803170204613,
+                        "lg": -77.6247162503319
+                      },
+                      "name": "Marketplace & Walmart",
+                      "address": {
+                        "address": "43.080317, -77.624716",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.08138388289105,
+                      "lg": -77.62315358809686
+                    }
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "effae39c-3dc0-47b6-a9f7-56e268ea50a2",
+                      "location": {
+                        "lt": 43.078719,
+                        "lg": -77.62217
+                      },
+                      "name": "Clay & Walmart",
+                      "address": {
+                        "address": "43.078719, -77.622170",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "4cd61c4a-24a1-489f-98b4-a74b528b2e5e",
+                      "location": {
+                        "lt": 43.083453,
+                        "lg": -77.629557
+                      },
+                      "name": "Hylan Hub East",
+                      "address": {
+                        "address": "43.083453, -77.629557",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "92e613ea-5582-4dac-8de4-abfa99b6d82d",
+                      "location": {
+                        "lt": 43.089693,
+                        "lg": -77.642294
+                      },
+                      "name": "Jefferson Plaza",
+                      "address": {
+                        "address": "43.089693, -77.642294",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.09184684296638,
+                      "lg": -77.65408764218861
+                    }
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.08651286516847,
+                      "lg": -77.66256004622483
+                    }
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "61d92387-054d-4cbd-bb8c-af8476c8f429",
+                      "location": {
+                        "lt": 43.08423,
+                        "lg": -77.667537
+                      },
+                      "name": "Residence Halls",
+                      "address": {
+                        "address": "43.084230, -77.667537",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": true,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "bcc81237-9db0-49c5-b9dd-c0d1fcc5362e",
+                      "location": {
+                        "lt": 43.0830906127816,
+                        "lg": -77.6759053233309
+                      },
+                      "name": "Gleason Circle Arrival",
+                      "address": {
+                        "address": "43.083091, -77.675905",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": true,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 30
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 30
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "b0b777f0-3f31-4b86-bacc-9a482b3d6f98",
+                      "location": {
+                        "lt": 43.0829250188604,
+                        "lg": -77.6764981512949
+                      },
+                      "name": "Gleason Circle Departure",
+                      "address": {
+                        "address": "43.082925, -77.676498",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": true,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Polygon": [
+                          {
+                            "lt": 43.082982676705,
+                            "lg": -77.6765230882428
+                          },
+                          {
+                            "lt": 43.0828553420877,
+                            "lg": -77.6763514268658
+                          },
+                          {
+                            "lt": 43.0822989846555,
+                            "lg": -77.6765096771977
+                          },
+                          {
+                            "lt": 43.0823322878834,
+                            "lg": -77.6766276943944
+                          }
+                        ]
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 70
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.08049814603705,
+                      "lg": -77.67931012941173
+                    }
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "1f6ea270-4bdc-4971-b0d5-83226aa29e20",
+                      "location": {
+                        "lt": 43.082212,
+                        "lg": -77.680808
+                      },
+                      "name": "Global Village",
+                      "address": {
+                        "address": "43.082212, -77.680808",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": true,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 46
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 46
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.08000445802492,
+                      "lg": -77.68035082650951
+                    }
+                  }
+                },
+                {
+                  "ViaWaypoint": {
+                    "waypointLocation": {
+                      "lt": 43.0901869962545,
+                      "lg": -77.65516847843682
+                    }
+                  }
+                },
+                {
+                  "ViaStop": {
+                    "stop": {
+                      "stopId": "ddd82364-79fa-4125-80d2-b0e4778a5a88",
+                      "location": {
+                        "lt": 43.089704,
+                        "lg": -77.643107
+                      },
+                      "name": "South Town Plaza",
+                      "address": {
+                        "address": "43.089704, -77.643107",
+                        "tags": []
+                      },
+                      "description": "",
+                      "photoIds": [],
+                      "yard": false,
+                      "terminal": false,
+                      "hasParking": false,
+                      "onDemand": false,
+                      "parentId": null,
+                      "groupParent": null,
+                      "geofence": {
+                        "Circle": 60
+                      },
+                      "regionId": "ca558ddc-d7f2-4b48-9cac-deea1134f820",
+                      "timezone": null,
+                      "tags": [],
+                      "gtfsId": null,
+                      "ttsStopName": null,
+                      "deleted": null,
+                      "yardCapacity": null,
+                      "yardVendorId": null,
+                      "yardMiddayParking": null
+                    },
+                    "visitType": "DropOffOrPickup",
+                    "arrivalRadiusMeters": 60
+                  }
+                }
+              ],
+              "navigationId": "b02be551-3d18-43a0-a2a2-00d418ab5417",
+              "userNavigationId": "b4b79d62-f05a-43bb-a629-7b3d3be17a3f",
+              "effectiveNavigationId": "b4b79d62-f05a-43bb-a629-7b3d3be17a3f",
+              "loopOptions": null,
+              "deviceMarkedDown": false,
+              "overflow": null,
+              "replacedBy": null,
+              "relatedToOriginal": null,
+              "relatedTo": [],
+              "obsolete": false,
+              "impromptu": false,
+              "lastMonitorUpdate": "2026-11-08T01:11:38.343Z",
+              "distanceOffRouteMeters": 0,
+              "lastDeviceStatus": null,
+              "lastEtaUpdate": "2026-11-08T01:11:38.343Z",
+              "lateBySec": 0,
+              "scheduledStart": "2026-11-08T01:00:00.000Z",
+              "scheduledEnd": "2026-11-08T01:50:00.000Z",
+              "liveDataAvailable": true,
+              "routeName": "12 Retail Shuttle",
+              "vehicleName": "501",
+              "vehicleShortName": "501",
+              "color": "#FF00AE",
+              "direction": "Inbound",
+              "vehicleCapacity": 35,
+              "riderCount": 14,
+              "userRiderCount": 14,
+              "bikeCount": 0,
+              "tags": [],
+              "boardingCode": null,
+              "payInfo": null,
+              "reservedSeating": false,
+              "capacity": null,
+              "bicycleCapacity": null,
+              "wheelchairCapacity": null,
+              "seatsPerWheelchair": null,
+              "shortName": null,
+              "wait": null,
+              "avaConfig": null
+            }
+          }
+        ]
+      }
+    ],
+    "inexactLiveData": []
+  }
+}

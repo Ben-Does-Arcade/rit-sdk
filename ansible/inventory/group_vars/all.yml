@@ -1,0 +1,17 @@
+---
+# Shared settings for every Uno Q
+upgrade_dist: upgrade          # "upgrade" (safe) or "dist-upgrade"
+autoremove_after_upgrade: true
+
+docker_edition: ce
+docker_compose: true
+
+# Setup vars for HA
+ha_image: ghcr.io/home-assistant/home-assistant:stable
+ha_container: homeassistant
+ha_tz: America/New_York
+
+ha_config_dir: "/home/{{ ansible_user }}/homeassistant"
+ha_restart_policy: unless-stopped
+ha_privileged: true
+ha_network: host

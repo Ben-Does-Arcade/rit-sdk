@@ -1,0 +1,8 @@
+credentials.py
+pages/
+secrets.*
+*.env
+.o
+.s
+.venv/
+.vault

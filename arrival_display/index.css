@@ -1,0 +1,82 @@
+@keyframes pulse {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+html {
+    margin: 0;
+}
+
+body {
+    background-color: rgb(87, 15, 126);
+}
+
+.page {
+    background-color: #FFF;
+    margin: 0 auto;
+    max-width: 800px;
+    min-height: calc(100vh - 100px);
+    padding: 40px;
+    border-radius: 5px;
+    overflow-x: hidden;
+}
+
+.header {
+    width: 100%;
+    font-size: 28px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.arrivals-list div {
+    font-size: 48px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.arrival-route {
+    font-weight: bold;
+}
+
+#no-arrivals {
+    animation: pulse 500ms infinite alternate-reverse;
+    font-size: 36px;
+    font-style: italic;
+}
+
+#dummy {
+    display: none;
+}
+
+#stop-name {
+    width: 100%;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+/* BUS EVENTS */
+
+.bus-on-time {
+    color: green;
+}
+
+.bus-late {
+    color: red;
+}
+
+.bus-boarding {
+    color: blue;
+    animation: pulse 500ms infinite alternate-reverse;
+}

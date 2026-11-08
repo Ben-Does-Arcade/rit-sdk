@@ -1,0 +1,113 @@
+---           
+# run with ansible-playbook --ask-vault-pass setup.yml
+
+- name: Setup Arduino Uno Q boards
+  hosts: all
+  gather_facts: true
+  become: true
+  serial: 1
+  any_errors_fatal: false
+
+  tasks:
+    - name: Change to current time zone (instead of UTC)
+      become: true
+      community.general.timezone:
+        name: "{{ha_tz}}"
+        hwclock: "{{ha_tz}}"
+
+    - name: Update apt package cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+      register: apt_cache
+      changed_when: apt_cache.cache_update_applied | default(false)
+      tags: [update, always]
+
+    - name: Upgrade all installed packages (apt-get upgrade -y)
+      ansible.builtin.apt:
+        upgrade: "{{ upgrade_dist | default('upgrade') }}"
+        autoremove: "{{ autoremove_after_upgrade | default(true) }}"
+        autoclean: true
+      environment:
+        DEBIAN_FRONTEND: noninteractive
+      register: apt_upgrade
+      notify: Reboot board if required
+      tags: [update]
+
+    - name: Install packages
+      ansible.builtin.apt:
+        name:
+          - curl
+          - gnupg
+          - apt-transport-https
+          - btop
+        state: present
+      environment:
+        DEBIAN_FRONTEND: noninteractive
+      tags: [docker]
+
+    # Docker is present in the arduino uno q. Uncomment if it is not 
+    # - name: Install Docker
+    #   apt:
+    #     name:
+    #       - docker-ce
+    #       - docker-ce-cli
+    #       - containerd.io
+    #       - docker-buildx-plugin
+    #       - docker-compose-plugin
+    #     state: present
+    #     update_cache: yes
+    
+    - name: Allow the login user to use docker without sudo
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        groups: [docker]
+        append: true
+      tags: [docker]
+    
+    - name: Setup HA config directory
+      ansible.builtin.file:
+        path: "{{ ha_config_dir }}"
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: "0755"
+      tags: [homeassistant]
+
+    # Copy over any extra yaml. configs, templates, etc...
+    - name: Copy over extra configs
+      ansible.builtin.shell: rsync ...
+      #register: rsync_output 
+      changed_when: false
+
+
+    # Run the HA-setup.sh
+    - name: Pull HA image
+      docker_image:        
+        name: homeassistant
+        tag: dev
+        source: pull
+      become: yes        
+
+
+    - name: Ensure the container is running (docker_container)
+      community.docker.docker_container:
+        name: "{{ ha_container }}"
+        image: "{{ ha_image }}"
+        state: started
+        pull: true
+        privileged: "{{ ha_privileged }}"
+        network_mode: host
+        restart_policy: "{{ ha_restart_policy }}"
+        restart: true
+        user: root
+        env:
+          TZ: "{{ ha_tz }}"
+        volumes:
+          - "{{ ha_config_dir }}:/config"
+      register: ha_container_result
+      tags: [homeassistant]
+
+    
+
+

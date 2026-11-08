@@ -1,0 +1,14 @@
+---
+# ansible-playbook -i ha-host, calendar_card.yml
+- name: Install Home Assistant calendar card
+  hosts: all
+  become: true
+
+
+# Import .js slide card from https://github.com/korova-sq/calendar-tasks-card
+  tasks:
+    - name: Download js file into HA config folder
+      ansible.builtin.get_url:
+        url: https://github.com/korova-sq/calendar-tasks-card/releases/download/v1.13.1/calendar-tasks-card.js
+        dest: ~/homeassistant/www/calendar-tasks-card.js
+        mode: '0440'

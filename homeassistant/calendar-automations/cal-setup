@@ -1,0 +1,14 @@
+# older function template for triggers on events
+
+automation:
+  - alias: "Calendar notification"
+    triggers:
+      - trigger: calendar
+        event: start
+        entity_id: calendar.personal # id unknown/Blocked untill d2l module is complete
+    actions:
+      - action: persistent_notification.create
+        data:
+          message: >-
+            Event {{ trigger.calendar_event.summary }} @
+            {{ trigger.calendar_event.start }}

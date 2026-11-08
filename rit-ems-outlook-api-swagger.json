@@ -1,0 +1,6775 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "EMS for Outlook REST API",
+    "version": "v1"
+  },
+  "servers": [
+    {
+      "url": "https://rit.emscloudservice.com/outlook-api"
+    }
+  ],
+  "paths": {
+    "/api/v1/Appointment/actions/loadschedule": {
+      "post": {
+        "tags": [
+          "Appointment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoadScheduleRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoadScheduleRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoadScheduleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoadScheduleResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoadScheduleResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoadScheduleResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Parameters": {
+      "get": {
+        "tags": [
+          "Parameters"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/ConfigurationModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/ConfigurationModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "$ref": "#/components/schemas/ConfigurationModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Reservations/actions/create": {
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "parameters": [
+          {
+            "name": "webUserId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Reservation"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Reservation"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Reservation"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Reservations/actions/get": {
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "parameters": [
+          {
+            "name": "webUserId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "originalPatternStartDateUTC",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetReservationRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetReservationRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GetReservationRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reservation"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reservation"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reservation"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Reservations/actions/update": {
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "parameters": [
+          {
+            "name": "webUserId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReservationModelRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReservationModelRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReservationModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Reservations/actions/updatetime": {
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "parameters": [
+          {
+            "name": "webUserId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReservationTimeModelRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReservationTimeModelRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateReservationTimeModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Reservations/actions/updaterecurringtime": {
+      "post": {
+        "tags": [
+          "Reservations"
+        ],
+        "parameters": [
+          {
+            "name": "webUserId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRecurringReservationTimeModelRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRecurringReservationTimeModelRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRecurringReservationTimeModelRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SaveReservationModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Resources/actions/bulksearch": {
+      "post": {
+        "tags": [
+          "Resources"
+        ],
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 50
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourcesBulkSearchRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourcesBulkSearchRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ResourcesBulkSearchRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ResourceModel"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ResourceModel"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ResourceModel"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AppointmentDependencies": {
+        "type": "object",
+        "properties": {
+          "entryId": {
+            "type": "string",
+            "nullable": true
+          },
+          "duration": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isChildOccurrence": {
+            "type": "boolean"
+          },
+          "originalStartDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "originalEndDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isMeetingPlannerReservation": {
+            "type": "boolean"
+          },
+          "reservationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "utcStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "utcEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "end": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "recurrenceState": {
+            "$ref": "#/components/schemas/EmsOlRecurrenceState"
+          },
+          "recurrenceDates": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "nullable": true
+          },
+          "timeZone": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneStandardName": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "subject": {
+            "type": "string",
+            "nullable": true
+          },
+          "isRecurring": {
+            "type": "boolean"
+          },
+          "recurrenceDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "isMeeting": {
+            "type": "boolean"
+          },
+          "allDayEvent": {
+            "type": "boolean"
+          },
+          "recurrenceNoEndDate": {
+            "type": "boolean"
+          },
+          "timeZoneOffsetMinutes": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Area": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingIDs": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "AreaModel": {
+        "type": "object",
+        "properties": {
+          "buildingIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeZoneId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Assembly": {
+        "type": "object",
+        "properties": {
+          "definedTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TypeInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "exportedTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Type"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "codeBase": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "entryPoint": {
+            "$ref": "#/components/schemas/MethodInfo"
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "imageRuntimeVersion": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "isDynamic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "reflectionOnly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFullyTrusted": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "escapedCodeBase": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true,
+            "deprecated": true
+          },
+          "manifestModule": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "modules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Module"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "globalAssemblyCache": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "hostContext": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "securityRuleSet": {
+            "$ref": "#/components/schemas/SecurityRuleSet"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AuditModel": {
+        "type": "object",
+        "properties": {
+          "addedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "changedBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateAdded": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateChanged": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Booking": {
+        "type": "object",
+        "properties": {
+          "originalJson": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "isChanged": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "originalItem": {
+            "$ref": "#/components/schemas/Booking"
+          },
+          "isAttendee": {
+            "type": "boolean"
+          },
+          "isDistributionList": {
+            "type": "boolean"
+          },
+          "isExchangeAttendee": {
+            "type": "boolean"
+          },
+          "reservationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newBookingGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "bookingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "changeCounter": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "startUTC": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endUTC": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startLocal": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endLocal": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventStartUTC": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventEndUTC": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventStartLocal": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventEndLocal": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "originalStartTimeUTC": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "roomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "buildingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "initialBuildingId": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "buildingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "tempRoomDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomType": {
+            "type": "string",
+            "nullable": true
+          },
+          "floor": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneAbbreviation": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "promptForBillingReference": {
+            "type": "boolean"
+          },
+          "recordType": {
+            "$ref": "#/components/schemas/TemplateRoomRecordType"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "groupName": {
+            "type": "string",
+            "nullable": true
+          },
+          "firstContactName": {
+            "type": "string",
+            "nullable": true
+          },
+          "setupTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupMinutes": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "vcHost": {
+            "type": "boolean"
+          },
+          "isCancelled": {
+            "type": "boolean"
+          },
+          "isNew": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "minCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "statusDisplayOnWeb": {
+            "type": "boolean"
+          },
+          "eventTypeDisplayOnWeb": {
+            "type": "boolean"
+          },
+          "roomDisplayOnWeb": {
+            "type": "boolean"
+          },
+          "changedDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "serviceOrders": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceOrder"
+            },
+            "nullable": true
+          },
+          "status": {
+            "$ref": "#/components/schemas/BookingStatus"
+          },
+          "conflictResolutionGroup": {
+            "type": "string",
+            "nullable": true
+          },
+          "outlookPatternOriginalDateTimeUTC": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "recurrencePatternChanged": {
+            "type": "boolean"
+          },
+          "uniqueId": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "servicesCartGroup": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BookingStatus": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayOnWeb": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "statusType": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BRPOValidation": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Building": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "calendaringTBDRoomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "calendaringTBDRoomDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZone": {
+            "$ref": "#/components/schemas/TimeZone"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuildingHours": {
+        "type": "object",
+        "properties": {
+          "buildingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "openTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "closeTime": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "BuildingModel": {
+        "type": "object",
+        "properties": {
+          "calendaringTBDRoom": {
+            "$ref": "#/components/schemas/CalendaringTBDRoomModel"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "currency": {
+            "$ref": "#/components/schemas/CurrencySummaryModel"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "float"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "float"
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZone": {
+            "$ref": "#/components/schemas/TimeZoneSummaryModel"
+          },
+          "timezoneId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CalendaringTBDRoomModel": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CallingConventions": {
+        "enum": [
+          1,
+          2,
+          3,
+          32,
+          64
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "buildingIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "allBuildings": {
+            "type": "boolean"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryType": {
+            "$ref": "#/components/schemas/CategoryType"
+          },
+          "allowAddOnWeekend": {
+            "type": "boolean"
+          },
+          "useCutOff": {
+            "type": "boolean"
+          },
+          "cutOffTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "cutOffDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cutOffHours": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "defaultQuantityType": {
+            "$ref": "#/components/schemas/CategoryDefaultQuantityType"
+          },
+          "promptForBillingReference": {
+            "type": "boolean"
+          },
+          "promptForPONumber": {
+            "type": "boolean"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "expandGroupings": {
+            "type": "boolean"
+          },
+          "minimumAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "defaultServeTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "termsHtml": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "displayToEverydayUsers": {
+            "type": "boolean"
+          },
+          "currencyIsTrailing": {
+            "type": "boolean"
+          },
+          "currencySymbol": {
+            "type": "string",
+            "nullable": true
+          },
+          "attendeeIsVisitor": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CategoryDefaultQuantityType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "CategoryType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ConfigurationModel": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "key": {
+            "type": "string",
+            "nullable": true
+          },
+          "options": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "type": {
+            "$ref": "#/components/schemas/ParameterType"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ConstructorInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MethodAttributes"
+          },
+          "methodImplementationFlags": {
+            "$ref": "#/components/schemas/MethodImplAttributes"
+          },
+          "callingConvention": {
+            "$ref": "#/components/schemas/CallingConventions"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructor": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFinal": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isHideBySig": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isStatic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isVirtual": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamily": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyAndAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyOrAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructedGenericMethod": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethod": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethodDefinition": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "containsGenericParameters": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "methodHandle": {
+            "$ref": "#/components/schemas/RuntimeMethodHandle"
+          },
+          "isSecurityCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecuritySafeCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityTransparent": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "emailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "faxNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "tempContact": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CurrencySummaryModel": {
+        "type": "object",
+        "properties": {
+          "isTrailing": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "symbol": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomAttributeData": {
+        "type": "object",
+        "properties": {
+          "attributeType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "constructor": {
+            "$ref": "#/components/schemas/ConstructorInfo"
+          },
+          "constructorArguments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeTypedArgument"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "namedArguments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeNamedArgument"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomAttributeNamedArgument": {
+        "type": "object",
+        "properties": {
+          "memberInfo": {
+            "$ref": "#/components/schemas/MemberInfo"
+          },
+          "typedValue": {
+            "$ref": "#/components/schemas/CustomAttributeTypedArgument"
+          },
+          "memberName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "isField": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CustomAttributeTypedArgument": {
+        "type": "object",
+        "properties": {
+          "argumentType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "value": {
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DateConflictModel": {
+        "type": "object",
+        "properties": {
+          "conflictDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "bookingIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DropDownItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "DropDownItemResult": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/DropDownItem"
+          },
+          "error": {
+            "$ref": "#/components/schemas/ErrorResult"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmsAttendee": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "freeBusyBlocks": {
+            "type": "string",
+            "nullable": true
+          },
+          "building": {
+            "type": "string",
+            "nullable": true
+          },
+          "isAddAttendeeType": {
+            "type": "boolean"
+          },
+          "recipientType": {
+            "$ref": "#/components/schemas/EmsOlMeetingRecipientType"
+          },
+          "addressEntryType": {
+            "$ref": "#/components/schemas/EmsOlAddressEntryUserType"
+          },
+          "jobTitle": {
+            "type": "string",
+            "nullable": true
+          },
+          "bookingEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmsAttendeeEvent"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmsAttendeeEvent": {
+        "type": "object",
+        "properties": {
+          "eventStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "availableType": {
+            "$ref": "#/components/schemas/ExchangeAvailabilityType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EmsOlAddressEntryUserType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          10,
+          11,
+          20,
+          30,
+          40
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EmsOlMeetingRecipientType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EmsOlRecurrenceState": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ErrorResult": {
+        "type": "object",
+        "properties": {
+          "exception": {
+            "$ref": "#/components/schemas/Exception"
+          },
+          "errorMessage": {
+            "type": "string",
+            "nullable": true
+          },
+          "messageId": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "requestUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusCode": {
+            "$ref": "#/components/schemas/HttpStatusCode"
+          },
+          "userFriendlyMessage": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EventAttributes": {
+        "enum": [
+          0,
+          512,
+          1024
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "EventInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/EventAttributes"
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "addMethod": {
+            "$ref": "#/components/schemas/MethodInfo"
+          },
+          "removeMethod": {
+            "$ref": "#/components/schemas/MethodInfo"
+          },
+          "raiseMethod": {
+            "$ref": "#/components/schemas/MethodInfo"
+          },
+          "isMulticast": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "eventHandlerType": {
+            "$ref": "#/components/schemas/Type"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EventType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "EventTypeModel": {
+        "type": "object",
+        "properties": {
+          "allowWebRequest": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayOnWeb": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Exception": {
+        "type": "object",
+        "properties": {
+          "targetSite": {
+            "$ref": "#/components/schemas/MethodBase"
+          },
+          "message": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": { },
+            "nullable": true,
+            "readOnly": true
+          },
+          "innerException": {
+            "$ref": "#/components/schemas/Exception"
+          },
+          "helpLink": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "hResult": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "stackTrace": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ExchangeAvailabilityType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "FacilityType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "Feature": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeatureModel": {
+        "type": "object",
+        "properties": {
+          "academicPreference": {
+            "type": "boolean"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "availableOnWeb": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tiedToResource": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FieldAttributes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          16,
+          32,
+          64,
+          128,
+          256,
+          512,
+          1024,
+          4096,
+          8192,
+          32768,
+          38144
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "FieldInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/FieldAttributes"
+          },
+          "fieldType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "isInitOnly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isLiteral": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNotSerialized": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "isPinvokeImpl": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isStatic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamily": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyAndAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyOrAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecuritySafeCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityTransparent": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "fieldHandle": {
+            "$ref": "#/components/schemas/RuntimeFieldHandle"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Floor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FloorModel": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GenericParameterAttributes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          8,
+          16,
+          28,
+          32
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "GetReservationRequest": {
+        "type": "object",
+        "properties": {
+          "reservationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "originalPatternStartDateUTC": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "initialRooms": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Group": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "isReadOnly": {
+            "type": "boolean"
+          },
+          "isAdded": {
+            "type": "boolean"
+          },
+          "isRemoved": {
+            "type": "boolean"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "address1": {
+            "type": "string",
+            "nullable": true
+          },
+          "address2": {
+            "type": "string",
+            "nullable": true
+          },
+          "billingReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "contactId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            },
+            "nullable": true
+          },
+          "contactsRequired": {
+            "type": "boolean"
+          },
+          "country": {
+            "type": "string",
+            "nullable": true
+          },
+          "dislayOnWeb": {
+            "type": "boolean"
+          },
+          "emailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "fax": {
+            "type": "string",
+            "nullable": true
+          },
+          "faxLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupType": {
+            "$ref": "#/components/schemas/GroupType"
+          },
+          "internationalFormat": {
+            "type": "boolean"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "poNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "state": {
+            "type": "string",
+            "nullable": true
+          },
+          "statusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "zipCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "pricingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GroupType": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HttpStatusCode": {
+        "enum": [
+          100,
+          101,
+          102,
+          103,
+          200,
+          201,
+          202,
+          203,
+          204,
+          205,
+          206,
+          207,
+          208,
+          226,
+          300,
+          301,
+          302,
+          303,
+          304,
+          305,
+          306,
+          307,
+          308,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          408,
+          409,
+          410,
+          411,
+          412,
+          413,
+          414,
+          415,
+          416,
+          417,
+          421,
+          422,
+          423,
+          424,
+          426,
+          428,
+          429,
+          431,
+          451,
+          500,
+          501,
+          502,
+          503,
+          504,
+          505,
+          506,
+          507,
+          508,
+          510,
+          511
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ICustomAttributeProvider": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "IntPtr": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "LayoutKind": {
+        "enum": [
+          0,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "LoadScheduleRequest": {
+        "type": "object",
+        "properties": {
+          "attendees": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EmsAttendee"
+            },
+            "nullable": true
+          },
+          "organizerEmail": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeLineStart": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timeLineStartUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "outlookParameterNames": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OutlookParameterRequest"
+            },
+            "nullable": true
+          },
+          "dependencies": {
+            "$ref": "#/components/schemas/AppointmentDependencies"
+          },
+          "webUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userSettings": {
+            "$ref": "#/components/schemas/WebUserSettings"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LoadScheduleResponse": {
+        "type": "object",
+        "properties": {
+          "reservation": {
+            "$ref": "#/components/schemas/Reservation"
+          },
+          "templates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProcessTemplate"
+            },
+            "nullable": true
+          },
+          "selectedTemplate": {
+            "$ref": "#/components/schemas/WebTemplateDetailModel"
+          },
+          "selectedGroup": {
+            "$ref": "#/components/schemas/Group"
+          },
+          "timeZones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeZoneModel"
+            },
+            "nullable": true
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Group"
+            },
+            "nullable": true
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigurationModel"
+            },
+            "nullable": true
+          },
+          "outlookParameters": {
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ConfigurationModel"
+            },
+            "nullable": true
+          },
+          "attendeeRooms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Room"
+            },
+            "nullable": true
+          },
+          "rooms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Room"
+            },
+            "nullable": true
+          },
+          "bookings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Booking"
+            },
+            "nullable": true
+          },
+          "setupTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SetupType"
+            },
+            "nullable": true
+          },
+          "webUserPersonalization": {
+            "$ref": "#/components/schemas/WebUserPersonalization"
+          },
+          "bookViews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DropDownItemResult"
+            },
+            "nullable": true
+          },
+          "specialDates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SpecialDate"
+            },
+            "nullable": true
+          },
+          "buildingHours": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuildingHours"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Location": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "type": {
+            "$ref": "#/components/schemas/FacilityType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "LocationType": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "MemberInfo": {
+        "type": "object",
+        "properties": {
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MemberTypes": {
+        "enum": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          191
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "MethodAttributes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          16,
+          32,
+          64,
+          128,
+          256,
+          512,
+          1024,
+          2048,
+          4096,
+          8192,
+          16384,
+          32768,
+          53248
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "MethodBase": {
+        "type": "object",
+        "properties": {
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MethodAttributes"
+          },
+          "methodImplementationFlags": {
+            "$ref": "#/components/schemas/MethodImplAttributes"
+          },
+          "callingConvention": {
+            "$ref": "#/components/schemas/CallingConventions"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructor": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFinal": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isHideBySig": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isStatic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isVirtual": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamily": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyAndAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyOrAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructedGenericMethod": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethod": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethodDefinition": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "containsGenericParameters": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "methodHandle": {
+            "$ref": "#/components/schemas/RuntimeMethodHandle"
+          },
+          "isSecurityCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecuritySafeCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityTransparent": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MethodImplAttributes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          8,
+          16,
+          32,
+          64,
+          128,
+          256,
+          512,
+          4096,
+          8192,
+          65535
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "MethodInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/MethodAttributes"
+          },
+          "methodImplementationFlags": {
+            "$ref": "#/components/schemas/MethodImplAttributes"
+          },
+          "callingConvention": {
+            "$ref": "#/components/schemas/CallingConventions"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructor": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFinal": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isHideBySig": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isStatic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isVirtual": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamily": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyAndAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFamilyOrAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPrivate": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructedGenericMethod": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethod": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethodDefinition": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "containsGenericParameters": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "methodHandle": {
+            "$ref": "#/components/schemas/RuntimeMethodHandle"
+          },
+          "isSecurityCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecuritySafeCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityTransparent": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "returnParameter": {
+            "$ref": "#/components/schemas/ParameterInfo"
+          },
+          "returnType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "returnTypeCustomAttributes": {
+            "$ref": "#/components/schemas/ICustomAttributeProvider"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Module": {
+        "type": "object",
+        "properties": {
+          "assembly": {
+            "$ref": "#/components/schemas/Assembly"
+          },
+          "fullyQualifiedName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "mdStreamVersion": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "moduleVersionId": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "scopeName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "moduleHandle": {
+            "$ref": "#/components/schemas/ModuleHandle"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ModuleHandle": {
+        "type": "object",
+        "properties": {
+          "mdStreamVersion": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "OutlookParameterRequest": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "useTemplateID": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParameterAttributes": {
+        "enum": [
+          0,
+          1,
+          2,
+          4,
+          8,
+          16,
+          4096,
+          8192,
+          16384,
+          32768,
+          61440
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParameterInfo": {
+        "type": "object",
+        "properties": {
+          "attributes": {
+            "$ref": "#/components/schemas/ParameterAttributes"
+          },
+          "member": {
+            "$ref": "#/components/schemas/MemberInfo"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "parameterType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "position": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "isIn": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isLcid": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isOptional": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isOut": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isRetval": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "defaultValue": {
+            "nullable": true,
+            "readOnly": true
+          },
+          "rawDefaultValue": {
+            "nullable": true,
+            "readOnly": true
+          },
+          "hasDefaultValue": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ParameterType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ParentType": {
+        "type": "integer",
+        "format": "int32"
+      },
+      "PersonalizationLocationModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LocationType"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PricingMethod": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ProcessTemplate": {
+        "type": "object",
+        "properties": {
+          "templateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventType"
+            },
+            "nullable": true
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Category"
+            },
+            "nullable": true
+          },
+          "allowBookingsAfterCutoffDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBookingsAfterCutoffTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "allowBookingsAfterThisDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "allowBookingsAfterThisManyHoursFromNow": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBookingsBeforeThisDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "allowBookingsBeforeXDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowInvitations": {
+            "type": "boolean"
+          },
+          "allowPersonalization": {
+            "type": "boolean"
+          },
+          "areas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Area"
+            },
+            "nullable": true
+          },
+          "billingReferenceRequired": {
+            "$ref": "#/components/schemas/ValidationMode"
+          },
+          "billingReferenceLookup": {
+            "type": "boolean"
+          },
+          "buildings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Building"
+            },
+            "nullable": true
+          },
+          "canEndNow": {
+            "type": "boolean"
+          },
+          "cancelCutoffDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cancelCutoffHours": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cancelCutoffTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "cancelStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cancelUseCutoff": {
+            "type": "boolean"
+          },
+          "checkMakeCalendarItemByDefault": {
+            "type": "boolean"
+          },
+          "conflictStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contactEmailRequired": {
+            "type": "boolean"
+          },
+          "contactPhoneRequired": {
+            "type": "boolean"
+          },
+          "currentNumberOfBookingsBeforeLastDate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "defaults": {
+            "$ref": "#/components/schemas/ProcessTemplateDefaults"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventNameMaxLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "featureId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Feature"
+            },
+            "nullable": true
+          },
+          "firstAllowedBookingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "floors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Floor"
+            },
+            "nullable": true
+          },
+          "haveFirstBookingTimeRestrictions": {
+            "type": "boolean"
+          },
+          "hostEventTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastAllowedBookingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "maxBookings": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxNumberMinutes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxNumberOfBookingsAllowedOnReservation": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "menuSequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "menuText": {
+            "type": "string",
+            "nullable": true
+          },
+          "minimumNowBookingLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mobileDeviceEnabled": {
+            "type": "boolean"
+          },
+          "mode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "noEasyPass": {
+            "type": "boolean"
+          },
+          "numberOfAllowedBookingsBeforeLastAllowedDate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numberOfAllowedBookingsPerDay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "poNumberLookup": {
+            "type": "boolean"
+          },
+          "poNumberRequired": {
+            "$ref": "#/components/schemas/ValidationMode"
+          },
+          "proximityDistance": {
+            "type": "number",
+            "format": "double"
+          },
+          "proximityUnit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestStatusDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "requestStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reserveStatusDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "reserveStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoomType"
+            },
+            "nullable": true
+          },
+          "roomViews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoomView"
+            },
+            "nullable": true
+          },
+          "setupTypeValidationRule": {
+            "$ref": "#/components/schemas/SetupTypeValidationRule"
+          },
+          "setupTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SetupType"
+            },
+            "nullable": true
+          },
+          "showAreas": {
+            "type": "boolean"
+          },
+          "showAttendance": {
+            "type": "boolean"
+          },
+          "showBillingReference": {
+            "type": "boolean"
+          },
+          "showFloors": {
+            "type": "boolean"
+          },
+          "showFeatures": {
+            "type": "boolean"
+          },
+          "showPoNumber": {
+            "type": "boolean"
+          },
+          "showRoomTypes": {
+            "type": "boolean"
+          },
+          "termsAndConditions": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeZoneInfo"
+            },
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "useMaxDays": {
+            "type": "boolean"
+          },
+          "useMinCutoff": {
+            "type": "boolean"
+          },
+          "useMinDays": {
+            "type": "boolean"
+          },
+          "userDefinedFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UdfDefinition"
+            },
+            "nullable": true
+          },
+          "videoConference": {
+            "type": "boolean"
+          },
+          "webAppEnabled": {
+            "type": "boolean"
+          },
+          "roomSort": {
+            "$ref": "#/components/schemas/RoomSort"
+          },
+          "showRoomPricing": {
+            "type": "boolean"
+          },
+          "showResourcePricing": {
+            "type": "boolean"
+          },
+          "pricingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "showRoomFiltersFirst": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProcessTemplateDefaults": {
+        "type": "object",
+        "properties": {
+          "buildingIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "favorite": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "floorIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Location"
+            },
+            "nullable": true
+          },
+          "reminder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "searchOverrideLocAndTz": {
+            "type": "boolean"
+          },
+          "setupCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "showResultsAs": {
+            "type": "string",
+            "nullable": true
+          },
+          "showTimeAs": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PropertyAttributes": {
+        "enum": [
+          0,
+          512,
+          1024,
+          4096,
+          8192,
+          16384,
+          32768,
+          62464
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "PropertyInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "propertyType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/PropertyAttributes"
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "canRead": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "canWrite": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "getMethod": {
+            "$ref": "#/components/schemas/MethodInfo"
+          },
+          "setMethod": {
+            "$ref": "#/components/schemas/MethodInfo"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Reservation": {
+        "type": "object",
+        "properties": {
+          "originalJson": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "isChanged": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "originalItem": {
+            "$ref": "#/components/schemas/Reservation"
+          },
+          "isNew": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "reservationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "entryId": {
+            "type": "string",
+            "nullable": true
+          },
+          "iCalUId": {
+            "type": "string",
+            "nullable": true
+          },
+          "webUserId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "webUserAuditName": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "processTemplateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "templateReserveStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "templateRequestStatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "group": {
+            "$ref": "#/components/schemas/Group"
+          },
+          "eventTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "billingReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "poNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "isVideoConference": {
+            "type": "boolean"
+          },
+          "changeCounter": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "altContact": {
+            "$ref": "#/components/schemas/Contact"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Contact"
+          },
+          "conferenceCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "conferenceUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "faxLabel": {
+            "type": "string",
+            "nullable": true
+          },
+          "rooms": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Room"
+            },
+            "nullable": true
+          },
+          "initialRoomIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "bookings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Booking"
+            },
+            "nullable": true
+          },
+          "userDefinedFields": {
+            "$ref": "#/components/schemas/UdfCollection"
+          },
+          "isCancelled": {
+            "type": "boolean"
+          },
+          "enableServices": {
+            "type": "boolean"
+          },
+          "servicesChanged": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceGroupingModel": {
+        "type": "object",
+        "properties": {
+          "availableToEverydayUsers": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceModel": {
+        "type": "object",
+        "properties": {
+          "accountId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "alert": {
+            "type": "string",
+            "nullable": true
+          },
+          "allowOverbook": {
+            "type": "boolean"
+          },
+          "audit": {
+            "$ref": "#/components/schemas/AuditModel"
+          },
+          "availableToEverydayUsers": {
+            "type": "boolean"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "changeCounter": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "expressCheckout": {
+            "type": "boolean"
+          },
+          "externalReference": {
+            "type": "string",
+            "nullable": true
+          },
+          "grouping": {
+            "$ref": "#/components/schemas/ResourceGroupingModel"
+          },
+          "hideSpecialInstructions": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "internal": {
+            "type": "boolean"
+          },
+          "maintainInventory": {
+            "type": "boolean"
+          },
+          "minQuantity": {
+            "type": "number",
+            "format": "float"
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "overrideDescription": {
+            "type": "boolean"
+          },
+          "packageResources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ResourcePackageModel"
+            },
+            "nullable": true
+          },
+          "pricing": {
+            "$ref": "#/components/schemas/ResourcePricingModel"
+          },
+          "quantityAvailable": {
+            "type": "number",
+            "format": "float"
+          },
+          "resourceAlertDisplayOnWeb": {
+            "type": "boolean"
+          },
+          "serves": {
+            "type": "number",
+            "format": "float"
+          },
+          "syncMailboxes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "usePackageItemPrice": {
+            "type": "boolean"
+          },
+          "webSequence": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourcePackageModel": {
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resource": {
+            "$ref": "#/components/schemas/ResourceModel"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourcePricingModel": {
+        "type": "object",
+        "properties": {
+          "discountPercent": {
+            "type": "string",
+            "nullable": true
+          },
+          "flatAmount": {
+            "type": "string",
+            "nullable": true
+          },
+          "fullDayPrice": {
+            "type": "string",
+            "nullable": true
+          },
+          "halfDayPrice": {
+            "type": "string",
+            "nullable": true
+          },
+          "hours": {
+            "type": "string",
+            "nullable": true
+          },
+          "maxCharge": {
+            "type": "string",
+            "nullable": true
+          },
+          "minimumCharge": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "pricingMethod": {
+            "$ref": "#/components/schemas/PricingMethod"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourcesBulkSearchRequest": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "featureId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "includeSyncMailboxes": {
+            "type": "boolean"
+          },
+          "roomIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "searchText": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Room": {
+        "type": "object",
+        "properties": {
+          "originalJson": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "isChanged": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "originalItem": {
+            "$ref": "#/components/schemas/Room"
+          },
+          "isAttendee": {
+            "type": "boolean"
+          },
+          "attendee": {
+            "$ref": "#/components/schemas/EmsAttendee"
+          },
+          "roomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "buildingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentRoomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "associatedRoomIDs": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "buildingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingDescriptionDisplay": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneAbbreviation": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "tempRoomDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomType": {
+            "type": "string",
+            "nullable": true
+          },
+          "classification": {
+            "$ref": "#/components/schemas/RoomClassification"
+          },
+          "floor": {
+            "type": "string",
+            "nullable": true
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "recordType": {
+            "$ref": "#/components/schemas/TemplateRoomRecordType"
+          },
+          "daysAvailable": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "conflictDaysAvailable": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numberOfDaysSelected": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "selected": {
+            "type": "boolean"
+          },
+          "vcHost": {
+            "type": "boolean"
+          },
+          "availableForAllDays": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "available": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "minCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "promptForBillingReference": {
+            "type": "boolean"
+          },
+          "isFavorite": {
+            "type": "boolean"
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "syncMailboxes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "conflicts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoomDateConflict"
+            },
+            "nullable": true
+          },
+          "isExceptionLocation": {
+            "type": "boolean"
+          },
+          "changeAllowed": {
+            "type": "boolean"
+          },
+          "displayAlertToEverydayUsers": {
+            "type": "boolean"
+          },
+          "alert": {
+            "type": "string",
+            "nullable": true
+          },
+          "isTBDRoom": {
+            "type": "boolean"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "requiresCheckIn": {
+            "type": "boolean"
+          },
+          "checkInMinutes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupHours": {
+            "type": "number",
+            "format": "double"
+          },
+          "teardownHours": {
+            "type": "number",
+            "format": "double"
+          },
+          "roomURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingURL": {
+            "type": "string",
+            "nullable": true
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "defaultSetupTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoomInfoSetupType"
+            },
+            "nullable": true
+          },
+          "setupTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bookings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Booking"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomClassification": {
+        "enum": [
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "RoomDateConflict": {
+        "type": "object",
+        "properties": {
+          "conflictRoomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoomInfoSetupType"
+            },
+            "nullable": true
+          },
+          "setupTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "conflictResolutionParentRoomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "buildingCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "buildingDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZone": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "tempRoomDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "vcHost": {
+            "type": "boolean"
+          },
+          "floor": {
+            "type": "string",
+            "nullable": true
+          },
+          "roomType": {
+            "type": "string",
+            "nullable": true
+          },
+          "minCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "promptForBillingReference": {
+            "type": "boolean"
+          },
+          "recordType": {
+            "$ref": "#/components/schemas/TemplateRoomRecordType"
+          },
+          "changeRoom": {
+            "type": "boolean"
+          },
+          "isTBDRoom": {
+            "type": "boolean"
+          },
+          "syncMailboxes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomInfoSetupType": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "minCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxCapacity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupType": {
+            "$ref": "#/components/schemas/SetupType"
+          },
+          "setupTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomSort": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "RoomType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomTypeModel": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "image": {
+            "type": "string",
+            "nullable": true
+          },
+          "imageExtension": {
+            "type": "string",
+            "nullable": true
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "webEnabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomView": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "selected": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomViewModel": {
+        "type": "object",
+        "properties": {
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timeZoneId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userFavorite": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeFieldHandle": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/IntPtr"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeMethodHandle": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/IntPtr"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RuntimeTypeHandle": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/IntPtr"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SaveReservationModel": {
+        "type": "object",
+        "properties": {
+          "savedChanges": {
+            "type": "boolean"
+          },
+          "reservationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "conflictDates": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DateConflictModel"
+            },
+            "nullable": true
+          },
+          "updateLocation": {
+            "type": "boolean"
+          },
+          "newLocation": {
+            "type": "string",
+            "nullable": true
+          },
+          "errorMessages": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SecurityRuleSet": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "ServiceOrder": {
+        "type": "object",
+        "properties": {
+          "originalJson": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "originalItem": {
+            "$ref": "#/components/schemas/ServiceOrder"
+          },
+          "serviceOrderDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceOrderDetail"
+            },
+            "nullable": true
+          },
+          "userDefinedFields": {
+            "$ref": "#/components/schemas/UdfCollection"
+          },
+          "isNew": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "serviceOrderId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newServiceOrderGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateAdded": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isChanged": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "categoryDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "categoryType": {
+            "$ref": "#/components/schemas/CategoryType"
+          },
+          "categoryBillingReferenceRequired": {
+            "type": "boolean"
+          },
+          "categoryPONumberRequired": {
+            "type": "boolean"
+          },
+          "categoryCurrencyIsTrailing": {
+            "type": "boolean"
+          },
+          "categoryCurrencySymbol": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "timeZoneOffsetMinutes": {
+            "type": "number",
+            "format": "double"
+          },
+          "serviceTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "serviceTypeDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "estimatedCount": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceOrderDetail": {
+        "type": "object",
+        "properties": {
+          "originalJson": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "originalItem": {
+            "$ref": "#/components/schemas/ServiceOrderDetail"
+          },
+          "isNew": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "serviceOrderDetailId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newSodId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "newServiceOrderDetailGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "packageServiceOrderDetailId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "dateAdded": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resourceGuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "isChanged": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resourceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "resourceDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourceNotes": {
+            "type": "string",
+            "nullable": true
+          },
+          "resourcePrice": {
+            "type": "string",
+            "nullable": true
+          },
+          "minQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "maxQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "resourceMaxQuantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "hasInventory": {
+            "type": "boolean"
+          },
+          "serves": {
+            "type": "string",
+            "nullable": true
+          },
+          "specialInstructionsVisible": {
+            "type": "boolean"
+          },
+          "packageResourceId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isPackageItem": {
+            "type": "boolean"
+          },
+          "syncMailboxes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "quantity": {
+            "type": "number",
+            "format": "double"
+          },
+          "specialInstructions": {
+            "type": "string",
+            "nullable": true
+          },
+          "tempResourceDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "emailAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "companyName": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalAttendee": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string",
+            "nullable": true
+          },
+          "selections": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ServiceOrderDetailItem"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ServiceOrderDetailItem": {
+        "type": "object",
+        "properties": {
+          "selectionId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetupType": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "allowWebRequest": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetupTypeModel": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "allowWebRequest": {
+            "type": "boolean"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SetupTypeValidation": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SetupTypeValidationRule": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SortType": {
+        "enum": [
+          0,
+          1
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "SpecialDate": {
+        "type": "object",
+        "properties": {
+          "buildingId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "StructLayoutAttribute": {
+        "type": "object",
+        "properties": {
+          "typeId": {
+            "nullable": true,
+            "readOnly": true
+          },
+          "value": {
+            "$ref": "#/components/schemas/LayoutKind"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TemplateDefaultsModel": {
+        "type": "object",
+        "properties": {
+          "endTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventTypeId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "favorite": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "floorId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "location": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationModel"
+            },
+            "nullable": true
+          },
+          "reminder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomTypeId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "searchOverrideLocAndTZ": {
+            "type": "boolean"
+          },
+          "setupCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "setupTypeId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "showResultsAs": {
+            "type": "string",
+            "nullable": true
+          },
+          "showTimeAs": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TemplateRoomRecordType": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "TimeSpan": {
+        "type": "object",
+        "properties": {
+          "ticks": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "days": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "hours": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "milliseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "microseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "nanoseconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "minutes": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "seconds": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "totalDays": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalHours": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMilliseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMicroseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalNanoseconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalMinutes": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          },
+          "totalSeconds": {
+            "type": "number",
+            "format": "double",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimeZone": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "automationName": {
+            "type": "string",
+            "nullable": true
+          },
+          "outlookDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "hourOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minuteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "abbreviation": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimeZoneInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "hasIanaId": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "standardName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "daylightName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "baseUtcOffset": {
+            "$ref": "#/components/schemas/TimeSpan"
+          },
+          "supportsDaylightSavingTime": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimeZoneModel": {
+        "type": "object",
+        "properties": {
+          "abbreviation": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "gmtDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "hourOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ianaDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minuteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TimeZoneSummaryModel": {
+        "type": "object",
+        "properties": {
+          "abbreviation": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "gmtDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "hourOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "minuteOffset": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Type": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "namespace": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "assemblyQualifiedName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "assembly": {
+            "$ref": "#/components/schemas/Assembly"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "isInterface": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNested": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "declaringMethod": {
+            "$ref": "#/components/schemas/MethodBase"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "underlyingSystemType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "isTypeDefinition": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isByRef": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPointer": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructedGenericType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericParameter": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericTypeParameter": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethodParameter": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericTypeDefinition": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSZArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isVariableBoundArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isByRefLike": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFunctionPointer": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isUnmanagedFunctionPointer": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasElementType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "genericTypeArguments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Type"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "genericParameterPosition": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "genericParameterAttributes": {
+            "$ref": "#/components/schemas/GenericParameterAttributes"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/TypeAttributes"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isImport": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSealed": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedFamANDAssem": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedFamily": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedFamORAssem": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedPrivate": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNotPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAutoLayout": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isExplicitLayout": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isLayoutSequential": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAnsiClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAutoClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isUnicodeClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isCOMObject": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isContextful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isEnum": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isMarshalByRef": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPrimitive": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValueType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSignatureType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecuritySafeCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityTransparent": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "structLayoutAttribute": {
+            "$ref": "#/components/schemas/StructLayoutAttribute"
+          },
+          "typeInitializer": {
+            "$ref": "#/components/schemas/ConstructorInfo"
+          },
+          "typeHandle": {
+            "$ref": "#/components/schemas/RuntimeTypeHandle"
+          },
+          "guid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "baseType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "isSerializable": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "containsGenericParameters": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isVisible": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TypeAttributes": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          16,
+          24,
+          32,
+          128,
+          256,
+          1024,
+          2048,
+          4096,
+          8192,
+          16384,
+          65536,
+          131072,
+          196608,
+          262144,
+          264192,
+          1048576,
+          12582912
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "TypeInfo": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "customAttributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomAttributeData"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "isCollectible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "metadataToken": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "memberType": {
+            "$ref": "#/components/schemas/MemberTypes"
+          },
+          "namespace": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "assemblyQualifiedName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "fullName": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "assembly": {
+            "$ref": "#/components/schemas/Assembly"
+          },
+          "module": {
+            "$ref": "#/components/schemas/Module"
+          },
+          "isInterface": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNested": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "declaringType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "declaringMethod": {
+            "$ref": "#/components/schemas/MethodBase"
+          },
+          "reflectedType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "underlyingSystemType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "isTypeDefinition": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isByRef": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPointer": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isConstructedGenericType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericParameter": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericTypeParameter": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericMethodParameter": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isGenericTypeDefinition": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSZArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isVariableBoundArray": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isByRefLike": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isFunctionPointer": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isUnmanagedFunctionPointer": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "hasElementType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "genericTypeArguments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Type"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "genericParameterPosition": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "genericParameterAttributes": {
+            "$ref": "#/components/schemas/GenericParameterAttributes"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/TypeAttributes"
+          },
+          "isAbstract": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isImport": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSealed": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSpecialName": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedAssembly": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedFamANDAssem": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedFamily": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedFamORAssem": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedPrivate": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNestedPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isNotPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPublic": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAutoLayout": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isExplicitLayout": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isLayoutSequential": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAnsiClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isAutoClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isUnicodeClass": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isCOMObject": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isContextful": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isEnum": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isMarshalByRef": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isPrimitive": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isValueType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSignatureType": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecuritySafeCritical": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isSecurityTransparent": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "structLayoutAttribute": {
+            "$ref": "#/components/schemas/StructLayoutAttribute"
+          },
+          "typeInitializer": {
+            "$ref": "#/components/schemas/ConstructorInfo"
+          },
+          "typeHandle": {
+            "$ref": "#/components/schemas/RuntimeTypeHandle"
+          },
+          "guid": {
+            "type": "string",
+            "format": "uuid",
+            "readOnly": true
+          },
+          "baseType": {
+            "$ref": "#/components/schemas/Type"
+          },
+          "isSerializable": {
+            "type": "boolean",
+            "readOnly": true,
+            "deprecated": true
+          },
+          "containsGenericParameters": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isVisible": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "genericTypeParameters": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Type"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaredConstructors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ConstructorInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaredEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaredFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FieldInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaredMembers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MemberInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaredMethods": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MethodInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaredNestedTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TypeInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "declaredProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PropertyInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "implementedInterfaces": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Type"
+            },
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UdfActionType": {
+        "enum": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "UdfCollection": {
+        "type": "object",
+        "properties": {
+          "definitions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UdfDefinition"
+            },
+            "nullable": true
+          },
+          "values": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UdfValue"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UdfDefinition": {
+        "type": "object",
+        "properties": {
+          "required": {
+            "type": "boolean"
+          },
+          "allowMultiSelect": {
+            "type": "boolean"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "defaultValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldType": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UdfDefinitionItem"
+            },
+            "nullable": true
+          },
+          "multiline": {
+            "type": "boolean"
+          },
+          "parentType": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentUdfId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentUdfItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentUdfTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "prompt": {
+            "type": "string",
+            "nullable": true
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "webAppEnabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UdfDefinitionItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itemDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "udfTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UDFDefinitionItemModel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "itemDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "udfTypeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UDFDefinitionModel": {
+        "type": "object",
+        "properties": {
+          "allowMultiSelect": {
+            "type": "boolean"
+          },
+          "categoryId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "defaultValue": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "fieldType": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UDFDefinitionItemModel"
+            },
+            "nullable": true
+          },
+          "multiline": {
+            "type": "boolean"
+          },
+          "parentType": {
+            "$ref": "#/components/schemas/ParentType"
+          },
+          "parentUDFItemId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentUDFTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "prompt": {
+            "type": "string",
+            "nullable": true
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "sequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "webAppEnabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UdfValue": {
+        "type": "object",
+        "properties": {
+          "actionType": {
+            "$ref": "#/components/schemas/UdfActionType"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "parentType": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "udfId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "value": {
+            "type": "string",
+            "nullable": true
+          },
+          "originalValue": {
+            "$ref": "#/components/schemas/UdfValue"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRecurringReservationTimeModelRequest": {
+        "type": "object",
+        "properties": {
+          "reservationId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "startUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startLocal": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endLocal": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "timeZone": {
+            "type": "string",
+            "nullable": true
+          },
+          "location": {
+            "type": "string",
+            "nullable": true
+          },
+          "dates": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "nullable": true
+          },
+          "allDayEvent": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateReservationModelRequest": {
+        "type": "object",
+        "properties": {
+          "reservation": {
+            "$ref": "#/components/schemas/Reservation"
+          },
+          "autoSendSummaryOnCancel": {
+            "type": "string",
+            "nullable": true
+          },
+          "recurrenceChangeViolations": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateReservationTimeModelRequest": {
+        "type": "object",
+        "properties": {
+          "reservation": {
+            "$ref": "#/components/schemas/Reservation"
+          },
+          "startUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endUtc": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "originalPatternStartDateUTC": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ValidationMode": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      },
+      "WebTemplateDetailModel": {
+        "type": "object",
+        "properties": {
+          "addWindow": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBookingsAfterCutoffDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBookingsAfterCutoffTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "allowBookingsAfterThisDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "allowBookingsAfterThisManyHoursFromNow": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowBookingsBeforeThisDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "allowBookingsBeforeXDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowInvitations": {
+            "type": "boolean"
+          },
+          "allowPersonalization": {
+            "type": "boolean"
+          },
+          "areas": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AreaModel"
+            },
+            "nullable": true
+          },
+          "billingReferenceRequired": {
+            "$ref": "#/components/schemas/BRPOValidation"
+          },
+          "billingReferencelookup": {
+            "type": "boolean"
+          },
+          "buildings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BuildingModel"
+            },
+            "nullable": true
+          },
+          "canEndNow": {
+            "type": "boolean"
+          },
+          "cancelCutoffDays": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cancelCutoffHours": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cancelCutoffTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "cancelStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cancelUseCutoff": {
+            "type": "boolean"
+          },
+          "checkMakeCalendarItemByDefault": {
+            "type": "boolean"
+          },
+          "conflictStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "contactEmailRequired": {
+            "type": "boolean"
+          },
+          "contactPhoneRequired": {
+            "type": "boolean"
+          },
+          "currentNumberOfBookingsBeforeLastDate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "defaultRatePlanId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "defaults": {
+            "$ref": "#/components/schemas/TemplateDefaultsModel"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "enableConferencing": {
+            "type": "boolean"
+          },
+          "eventNameMaxLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "eventTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/EventTypeModel"
+            },
+            "nullable": true
+          },
+          "featureId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FeatureModel"
+            },
+            "nullable": true
+          },
+          "filterFirst": {
+            "type": "boolean"
+          },
+          "firstAllowedBookingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "floors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FloorModel"
+            },
+            "nullable": true
+          },
+          "haveFirstBookingTimeRestrictions": {
+            "type": "boolean"
+          },
+          "hostEventTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastAllowedBookingDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "maxBookings": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxNumberMinutes": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "maxNumberOfBookingsAllowedOnReservation": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "menuSequence": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "menuText": {
+            "type": "string",
+            "nullable": true
+          },
+          "minimumNowBookingLength": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "mobileDeviceEnabled": {
+            "type": "boolean"
+          },
+          "mode": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "noEasyPass": {
+            "type": "boolean"
+          },
+          "numberOfAllowedBookingsBeforeLastAllowedDate": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numberOfAllowedBookingsPerDay": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "outlookEnabled": {
+            "type": "boolean"
+          },
+          "poNumberLookup": {
+            "type": "boolean"
+          },
+          "poNumberRequired": {
+            "$ref": "#/components/schemas/BRPOValidation"
+          },
+          "proximityDistance": {
+            "type": "string",
+            "nullable": true
+          },
+          "proximityUnit": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "requestStatusDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "requestStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "reservationsAllowTempContact": {
+            "type": "boolean"
+          },
+          "reserveStatusDescription": {
+            "type": "string",
+            "nullable": true
+          },
+          "reserveStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomSort": {
+            "$ref": "#/components/schemas/SortType"
+          },
+          "roomTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoomTypeModel"
+            },
+            "nullable": true
+          },
+          "roomViews": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RoomViewModel"
+            },
+            "nullable": true
+          },
+          "ruleViolationStatusId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "servicesAllowEdit": {
+            "type": "boolean"
+          },
+          "setupTypeValidationRule": {
+            "$ref": "#/components/schemas/SetupTypeValidation"
+          },
+          "setupTypes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SetupTypeModel"
+            },
+            "nullable": true
+          },
+          "showAdditionalFilters": {
+            "type": "boolean"
+          },
+          "showAltContact": {
+            "type": "boolean"
+          },
+          "showAreas": {
+            "type": "boolean"
+          },
+          "showAttendance": {
+            "type": "boolean"
+          },
+          "showBillingReference": {
+            "type": "boolean"
+          },
+          "showFeatures": {
+            "type": "boolean"
+          },
+          "showFloors": {
+            "type": "boolean"
+          },
+          "showPONumber": {
+            "type": "boolean"
+          },
+          "showResourcePricing": {
+            "type": "boolean"
+          },
+          "showRoomPricing": {
+            "type": "boolean"
+          },
+          "showRoomTypes": {
+            "type": "boolean"
+          },
+          "showServiceAvailability": {
+            "type": "boolean"
+          },
+          "termsAndConditions": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZones": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/TimeZoneModel"
+            },
+            "nullable": true
+          },
+          "useMaxDays": {
+            "type": "boolean"
+          },
+          "useMinCutoff": {
+            "type": "boolean"
+          },
+          "useMinDays": {
+            "type": "boolean"
+          },
+          "userDefinedFields": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UDFDefinitionModel"
+            },
+            "nullable": true
+          },
+          "videoConference": {
+            "type": "boolean"
+          },
+          "webAppEnabled": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebUserPersonalization": {
+        "type": "object",
+        "properties": {
+          "endTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventName": {
+            "type": "string",
+            "nullable": true
+          },
+          "eventTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "floorIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "locations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PersonalizationLocationModel"
+            },
+            "nullable": true
+          },
+          "reminder": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "searchOverrideLocAndTZ": {
+            "type": "boolean"
+          },
+          "setupTypeIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "showResultsAs": {
+            "type": "string",
+            "nullable": true
+          },
+          "showTimeAs": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "timeZoneIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "showAttendeesInScheduleView": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WebUserSettings": {
+        "type": "object",
+        "properties": {
+          "platformServiceUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "groupId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "processTemplateId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "showAttendeesOnSchedule": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

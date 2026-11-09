@@ -15,7 +15,7 @@ const updateDate = () => {
 const updateArrivals = async () => {
     console.log("Updating arrivals...");
 
-    fetch("http://192.168.10.197:5000/get_all_route_times", {
+    fetch("http://tripshot.taila93dbf.ts.net:5000/get_all_route_times", {
         method: "GET" //,
         // "headers": {"route": configuredRoute}
     }).then((res) => {

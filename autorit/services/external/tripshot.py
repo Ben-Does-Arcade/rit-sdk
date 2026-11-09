@@ -31,8 +31,6 @@ class Client(ExternalService):
                 logging.debug(f"Discovered route '{route_content}'")
                 routes.append(route_content)
 
-            sleep(0.1)
-
         return routes
 
     def get_route_stop_times(self, route: str) -> dict:
@@ -47,7 +45,7 @@ class Client(ExternalService):
             if route in (label_text or ""):
                 logging.debug(f"Activating route '{label_text}'")
                 label.click()
-                sleep(0.5)
+                sleep(0.2)
 
                 with open("autorit/services/helpers/tripshot_get_stops.js", "r") as f:
                     js_code = f.read()
